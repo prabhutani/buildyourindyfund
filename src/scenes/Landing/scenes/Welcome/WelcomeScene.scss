@@ -1,0 +1,55 @@
+@mixin resize(
+  $clipPath,
+  $paddingBottom,
+  $marginTop,
+) {
+  .welcome-screen {
+    clip-path: $clipPath;
+    padding-bottom: $paddingBottom;
+
+    &__marquee-line {
+      margin-top: $marginTop;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  @include resize(
+    $clipPath: polygon(0 0, 100% 0%, 100% 97%, 0% 100%),
+    $paddingBottom: 140px,
+    $marginTop: -34px,
+  );
+}
+
+@media screen and (min-width: 641px) and (max-width: 768px) {
+  @include resize(
+    $clipPath: polygon(0 0, 100% 0%, 100% 96%, 0% 100%),
+    $paddingBottom: 200px,
+    $marginTop: -40px,
+  );
+}
+
+@media screen and (min-width: 769px) {
+  @include resize(
+    $clipPath: polygon(0 0, 100% 0%, 100% 94%, 0% 100%),
+    $paddingBottom: 286px,
+    $marginTop: -90px,
+  );
+}
+
+@media screen and (min-width: 1440px) {
+  @include resize(
+    $clipPath: polygon(0 0, 100% 0%, 100% 91%, 0% 100%),
+    $paddingBottom: 320px,
+    $marginTop: -150px,
+  );
+}
+
+
+@media screen and (min-width: 2880px) {
+  @include resize(
+    $clipPath: polygon(0 0, 100% 0%, 100% 88%, 0% 100%),
+    $paddingBottom: 360px,
+    $marginTop: -190px,
+  );
+}

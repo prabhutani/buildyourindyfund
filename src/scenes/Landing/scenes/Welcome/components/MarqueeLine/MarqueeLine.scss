@@ -1,0 +1,25 @@
+.marquee-line {
+  height: 85px;
+  background-color: #374EF3;
+  transform: skew(0, -5.73deg);
+
+  &__text {
+    font-size: 36px;
+    line-height: 53px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-right: 114px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .marquee-line {
+    height: 56px;
+
+    &__text {
+      font-size: 16px;
+      line-height: 24px;
+      margin-right: 60px;
+    }
+  }
+}

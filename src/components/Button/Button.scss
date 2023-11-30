@@ -1,0 +1,104 @@
+@mixin colored-button(
+  $backgroundColor,
+  $hoverAndActiveBackgroundColor,
+  $disabledBackgroundColor,
+  $borderColor: $backgroundColor,
+  $hoverAndActiveBorderColor: $hoverAndActiveBackgroundColor,
+  $disabledBorderColor: $disabledBackgroundColor,
+  $textColor,
+  $hoverAndActiveColor: $textColor,
+  $disabledTextColor,
+) {
+  background-color: $backgroundColor !important;
+  color: $textColor;
+  border-color: $borderColor;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $hoverAndActiveBackgroundColor !important;
+    color: $hoverAndActiveColor;
+    border-color: $hoverAndActiveBorderColor;
+  }
+
+  &:disabled {
+    background-color: $disabledBackgroundColor !important;
+    color: $disabledTextColor;
+    border-color: $disabledBorderColor;
+  }
+}
+
+
+.button {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  background-color: transparent;
+  padding: 12px 48px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  transition: background-color 0.2s ease,
+              border-color 0.2s ease,
+              color 0.2s ease;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 1.5;
+
+  &--rounded {
+    border-radius: 50px;
+  }
+
+  // Size
+  &--size-s {
+    padding: 6px 14px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  &--size-m {
+  }
+
+  &--size-l {
+    padding: 15px 63px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  // THEME
+  &--theme-primary {
+    @include colored-button(
+      $backgroundColor: theme('colors.blue.900'),
+      $hoverAndActiveBackgroundColor: #2A40DD,
+      $disabledBackgroundColor: #233185,
+      $textColor: #ffffff,
+      $disabledTextColor: #FFFFFF80,
+    )
+  }
+
+  &--theme-secondary {
+    @include colored-button(
+      $backgroundColor: theme('colors.black.900'),
+      $hoverAndActiveBackgroundColor: #000000,
+      $disabledBackgroundColor: theme('colors.black.800'),
+      $textColor: #ffffff,
+      $disabledTextColor: theme('colors.gray.900'),
+    )
+  }
+
+  &--large-secondary {
+    @include colored-button(
+      $backgroundColor: #ffffff,
+      $hoverAndActiveBackgroundColor: #ffffff,
+      $disabledBackgroundColor: #ffffff,
+      $borderColor: #2E2E2E,
+      $hoverAndActiveBorderColor: #000000,
+      $disabledBorderColor: theme('colors.gray.900'),
+      $textColor: #2E2E2E,
+      $hoverAndActiveColor: #000000,
+      $disabledTextColor: theme('colors.gray.900'),
+    )
+  }
+}
