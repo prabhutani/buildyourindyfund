@@ -30,17 +30,17 @@ export const WelcomeScene = ({ onScroll }: ScrollCallback) => {
         <div className="custom-container">
           <div className="flex flex-col items-center">
             <h1 className="text-center text-white">
-              Try out Indyfund building now
+              Try Out Indyfund Building and
               <br className="hidden sm:block" />
-              <span className="sm:hidden">&nbsp;</span>and sign up for early access
+              <span className="sm:hidden">&nbsp;</span>Sign Up for Early Access Now
             </h1>
 
             <p className="mt-4 text-center text-xl text-white sm:mt-10 lg:mt-12">
             Take back control – create your own custom investment
               <br />
-              Indyfund with stocks, crypto and more using our
+              Indyfund with stocks, ETFs and more using our
               <br />
-              powerful tools custom AI expert
+              powerful platform and personalized analysis system
             </p>
             <GetEarlyAccessForm className="mt-28" />
           </div>
